@@ -6,28 +6,28 @@ setShowLogs(false);
 
 // Read file
 const filePath = './day1/input.txt';
-let inputString = await readFileToString(filePath);
+const inputString = await readFileToString(filePath);
 superLog(inputString);
 
 // ******* PART 1 *****
 // Split the file intp lines
-let split = inputString.split("\n");
+const split = inputString.split("\n");
 superLog(split);
 
 // Simple example of a for loop
-let firstColumn = new Array();
-let secondColumn = new Array();
-let numberOfRows = split.length;
+const firstColumn = [];
+const secondColumn = [];
+const numberOfRows = split.length;
 for(let i = 0; i < numberOfRows; i++) {
-	let line = split[i].split(" ");
-    let firstNumber = Number(line[0]);
-    let secondNumber = Number(line[line.length - 1]);
+    const line = split[i].split(" ");
+    const firstNumber = Number(line[0]);
+    const secondNumber = Number(line[line.length - 1]);
     firstColumn.push(firstNumber);
     secondColumn.push(secondNumber);
 }
 
-let firstColumnSorted = firstColumn.sort();
-let secondColumnSorted = secondColumn.sort();
+const firstColumnSorted = firstColumn.sort();
+const secondColumnSorted = secondColumn.sort();
 superLog(firstColumnSorted);
 superLog(secondColumnSorted);
 
