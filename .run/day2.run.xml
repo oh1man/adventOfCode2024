@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="day2" type="DenoConfigurationType" inputPath="$PROJECT_DIR$/day2/index.ts" programParameters="run --allow-read">
+    <method v="2" />
+  </configuration>
+</component>
