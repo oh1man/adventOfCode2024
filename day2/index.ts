@@ -55,3 +55,9 @@ for (const report of reports) {
     }
 }
 console.log("Number of safe reports: " + numberOfSafeReports);
+
+/**
+ * LEARNING
+ * To copy a collection we can use the special "..." - operator known as spreading operator.
+ * For example [...array] => [...[1, 2, 3]] => [1, 2, 3] which is a new instance and a copy of the first one
+ */
