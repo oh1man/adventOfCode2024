@@ -33,6 +33,7 @@ const matrix = createMatrix(input);
     console.log(numberOfXmas);
 }
 
+// Part 2
 {
     const scanner = new Scan2D(matrix);
     let numberOfXmas = 0;
@@ -60,3 +61,10 @@ function isMas(diag1: string[]): boolean{
     const reverse = diag1.reverse().join("");
     return  "MAS" == word || "MAS" === reverse;
 }
+
+/**
+ * LEARNINGS:
+ * To iterate over values of an object we can use the Object.values().
+ * Same goes for its keys, by using Object.keys()
+ * Also noted that for-loops seems to be quite slow.
+ */
