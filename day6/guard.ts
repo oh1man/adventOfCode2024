@@ -18,13 +18,36 @@ export class Guard {
         this.direction = direction;
     }
 
-    getLocation(): [number, number] {
-        return [this.x, this.y];
+    getDirection() {
+        return this.direction;
+    }
+
+    getLocation(): [{ x: number, y: number}, Direction ] {
+        return [{
+            x: this.x,
+            y: this.y
+        },
+            this.direction
+        ];
     }
 
     step() {
         const _x = this.x + this.direction[0];
         const _y = this.y + this.direction[1];
+        const elementForward = this.map[_y][_x];
+        if (elementForward === "#") {
+            throw new ObstacleError("Obstacle");
+        }
+        this.x = _x;
+        this.y = _y;
+    }
+
+    stepWithObstacle(x: number, y: number) {
+        const _x = this.x + this.direction[0];
+        const _y = this.y + this.direction[1];
+        if (x === _x && y === _y) {
+            throw new ObstacleError("Obstacle");
+        }
         const elementForward = this.map[_y][_x];
         if (elementForward === "#") {
             throw new ObstacleError("Obstacle");
